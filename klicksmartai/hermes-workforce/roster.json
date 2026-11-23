@@ -1,0 +1,115 @@
+{
+  "version": "1.0",
+  "status": "design_only",
+  "runtime": "hermes",
+  "workers": [
+    {
+      "id": "architect",
+      "source": "engineering/engineering-multi-agent-systems-architect.md",
+      "can": [
+        "read_design",
+        "propose_contracts"
+      ],
+      "cannot": [
+        "send_outreach",
+        "modify_client_crm"
+      ]
+    },
+    {
+      "id": "discovery",
+      "source": "sales/sales-offer-lead-gen-strategist.md",
+      "can": [
+        "read_client_brain",
+        "query_approved_discovery"
+      ],
+      "cannot": [
+        "send_outreach",
+        "write_crm"
+      ]
+    },
+    {
+      "id": "enrichment",
+      "source": "engineering/engineering-data-engineer.md",
+      "can": [
+        "read_prospect_sources",
+        "invoke_python_enrichment",
+        "write_tenant_enrichment"
+      ],
+      "cannot": [
+        "send_outreach"
+      ]
+    },
+    {
+      "id": "intelligence",
+      "source": "sales/sales-outbound-strategist.md",
+      "can": [
+        "read_evidence",
+        "propose_why_now_signal"
+      ],
+      "cannot": [
+        "invent_signal",
+        "send_outreach"
+      ]
+    },
+    {
+      "id": "qualification",
+      "source": "sales/sales-deal-strategist.md",
+      "can": [
+        "read_evidence",
+        "propose_score",
+        "draft_battle_card"
+      ],
+      "cannot": [
+        "change_production_weights"
+      ]
+    },
+    {
+      "id": "outreach",
+      "source": "marketing/marketing-email-strategist.md",
+      "can": [
+        "read_approved_claims",
+        "draft_sequence",
+        "request_approval"
+      ],
+      "cannot": [
+        "send_without_approval"
+      ]
+    },
+    {
+      "id": "crm_analytics",
+      "source": "sales/sales-pipeline-analyst.md",
+      "can": [
+        "read_tenant_crm_outcomes",
+        "propose_score_experiment"
+      ],
+      "cannot": [
+        "write_cross_tenant",
+        "auto_promote_model"
+      ]
+    },
+    {
+      "id": "quality",
+      "source": "testing/testing-reality-checker.md",
+      "can": [
+        "read_traces",
+        "run_evaluations",
+        "block_release"
+      ],
+      "cannot": [
+        "override_human_approval"
+      ]
+    }
+  ],
+  "required_context": [
+    "tenant_id",
+    "trace_id",
+    "client_brain_version"
+  ],
+  "human_approval": [
+    "external_send",
+    "bulk_crm_write",
+    "financial_or_insurance_advice",
+    "commercial_commitment",
+    "production_model_promotion"
+  ]
+}
